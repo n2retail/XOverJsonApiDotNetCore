@@ -63,6 +63,61 @@ namespace JsonApiDotNetCore.Services
 #pragma warning restore 612
         }
 
+        // TODO: FAKE IMPLEMENTATION
+        protected JsonApiResourceService(IJsonApiContext jsonApiContext, IResourceRepository<TResource,TId> queryLayerComposer, ILoggerFactory paginationContext)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected JsonApiResourceService(IJsonApiContext jsonApiContext, IResourceRepository<TResource,TId> shrinkBatchItemEntityRepository)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<TResource> CreateAsync(TResource resource)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<TResource> UpdateAsync(TId id, TResource resource)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<TResource> GetAsync(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IEnumerable<TResource>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable<TResource> ApplySortAndFilterQuery(IQueryable<TResource> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<bool> DeleteAsync(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected virtual IQueryable<TResource> IncludeRelationships(IQueryable<TResource> entities,
+            List<string> relationships)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <inheritdoc />
         public virtual async Task<IReadOnlyCollection<TResource>> GetAsync(CancellationToken cancellationToken)
         {
@@ -450,6 +505,8 @@ namespace JsonApiDotNetCore.Services
 
             _hookExecutor.AfterDelete<TResource, TId>(id);
         }
+
+
 
         /// <inheritdoc />
         public virtual async Task RemoveFromToManyRelationshipAsync(TId primaryId, string relationshipName, ISet<IIdentifiable> secondaryResourceIds,

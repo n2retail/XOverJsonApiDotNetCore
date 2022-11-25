@@ -33,6 +33,8 @@ namespace JsonApiDotNetCore.Resources.Annotations
             set => _capabilities = value;
         }
 
+        public string InternalAttributeName { get; set; }
+
         /// <summary>
         /// Get the value of the attribute for the given object. Throws if the attribute does not belong to the provided object.
         /// </summary>

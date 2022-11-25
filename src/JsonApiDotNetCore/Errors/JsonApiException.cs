@@ -39,5 +39,17 @@ namespace JsonApiDotNetCore.Errors
 
             Errors = errorList;
         }
+
+        // TODO: FAKE IMPLEMENTATION
+        public JsonApiException(ErrorCollection errors)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public int GetStatusCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

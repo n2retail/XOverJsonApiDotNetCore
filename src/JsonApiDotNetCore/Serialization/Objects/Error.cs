@@ -1,11 +1,44 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using JetBrains.Annotations;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace JsonApiDotNetCore.Serialization.Objects
 {
+    // TODO: FAKE IMPLEMENTATION
+    public class ErrorCollection
+    {
+        public ErrorCollection()
+        {
+            Errors = new List<Error>();
+        }
+
+        public List<Error> Errors { get; set; }
+
+        public void Add(Error error)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetJson()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetErrorStatusCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IActionResult AsActionResult()
+        {
+            throw new NotImplementedException();
+        }
+    }
     /// <summary>
     /// Provides additional information about a problem encountered while performing an operation. Error objects MUST be returned as an array keyed by errors
     /// in the top level of a JSON:API document.
@@ -13,6 +46,17 @@ namespace JsonApiDotNetCore.Serialization.Objects
     [PublicAPI]
     public sealed class Error
     {
+        // TODO: FAKE IMPLEMENTATION
+        public IActionResult AsActionResult()
+        {
+            var errorCollection = new ErrorCollection
+            {
+                Errors = new List<Error> { this }
+            };
+
+            return errorCollection.AsActionResult();
+        }
+
         /// <summary>
         /// A unique identifier for this particular occurrence of the problem.
         /// </summary>

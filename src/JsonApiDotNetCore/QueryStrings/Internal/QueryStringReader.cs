@@ -4,6 +4,8 @@ using JetBrains.Annotations;
 using JsonApiDotNetCore.Configuration;
 using JsonApiDotNetCore.Controllers.Annotations;
 using JsonApiDotNetCore.Errors;
+using JsonApiDotNetCore.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Primitives;
 
@@ -68,6 +70,12 @@ namespace JsonApiDotNetCore.QueryStrings.Internal
                         $"Set '{nameof(IJsonApiOptions.AllowUnknownQueryStringParameters)}' to 'true' in options to ignore unknown parameters.");
                 }
             }
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public QuerySet Parse(QueryCollection queryCollection)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

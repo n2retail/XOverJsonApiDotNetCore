@@ -8,12 +8,14 @@ using System.Threading.Tasks;
 using JetBrains.Annotations;
 using JsonApiDotNetCore.Configuration;
 using JsonApiDotNetCore.Errors;
+using JsonApiDotNetCore.Internal.Query;
 using JsonApiDotNetCore.Middleware;
 using JsonApiDotNetCore.Queries;
 using JsonApiDotNetCore.Queries.Expressions;
 using JsonApiDotNetCore.Queries.Internal.QueryableBuilding;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
+using JsonApiDotNetCore.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -60,6 +62,103 @@ namespace JsonApiDotNetCore.Repositories
 #pragma warning disable 612 // Method is obsolete
             _resourceDefinitionAccessor = resourceFactory.GetResourceDefinitionAccessor();
 #pragma warning restore 612
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected EntityFrameworkCoreRepository(IJsonApiContext jsonApiContext, IDbContextResolver contextResolver, JsonApiResourceDefinition<TResource, TId> resourceDefinition)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected EntityFrameworkCoreRepository(ILoggerFactory jsonApiContext, IJsonApiContext contextResolver, IDbContextResolver resourceDefinition, JsonApiResourceDefinition<TResource,TId> resourceFactory)
+        {
+            throw new NotImplementedException();
+        }
+
+        public EntityFrameworkCoreRepository(
+            ILoggerFactory loggerFactory,
+            IJsonApiContext jsonApiContext,
+            IDbContextResolver contextResolver)
+        {
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable<TResource> Filter(IQueryable<TResource> entities, FilterQuery filterQuery)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IEnumerable<TResource>> PageAsync(IQueryable<TResource> entities, int pageSize,
+            int pageNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<int> CountAsync(IQueryable<TResource> entities)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable<TResource> Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<TResource> GetAsync(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<IEnumerable<TResource>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable<TResource> Include(IQueryable<TResource> entities, string relationshipName)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable Filter(IQueryable queryable, FilterQuery filterQuery)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<TResource> CreateAsync(TResource entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<TResource> UpdateAsync(TId id, TResource entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual Task<bool> DeleteAsync(TId id)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<TResource> GetAndIncludeAsync(TId id, string relationshipName){
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual IQueryable<TResource> Sort(IQueryable<TResource> entities, List<SortQuery> sortQueries)
+        {
+            throw new NotImplementedException();
         }
 
         /// <inheritdoc />
@@ -145,6 +244,8 @@ namespace JsonApiDotNetCore.Repositories
         {
             return _dbContext.Set<TResource>();
         }
+
+
 
         /// <inheritdoc />
         public virtual Task<TResource> GetForCreateAsync(TId id, CancellationToken cancellationToken)
@@ -540,6 +641,8 @@ namespace JsonApiDotNetCore.Repositories
                 throw new DataStoreUpdateException(exception);
             }
         }
+
+
     }
 
     /// <summary>

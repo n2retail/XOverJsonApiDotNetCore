@@ -40,6 +40,64 @@ namespace JsonApiDotNetCore.Controllers
         {
         }
 
+        // TODO: FAKE IMPLEMENTATION
+        protected JsonApiController(
+            IJsonApiContext jsonApiContext,
+            IGetAllService<TResource, TId> getAll = null,
+            IGetByIdService<TResource, TId> getById = null,
+            IGetRelationshipService<TResource, TId> getRelationship = null,
+            //IGetRelationshipsService<T, TId> getRelationships = null,
+            ICreateService<TResource, TId> create = null,
+            IUpdateService<TResource, TId> update = null,
+            //IUpdateRelationshipService<T, TId> updateRelationships = null,
+            IDeleteService<TResource, TId> delete = null
+        ) : base(null, null, null)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected JsonApiController(IJsonApiContext jsonApiContext, IResourceService<TResource,TId> resourceService, ILoggerFactory loggerFactory) : base(null, null, null)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected JsonApiController(IJsonApiContext jsonApiContext, IResourceService<TResource,TId> resourceService) : base(null, null, null)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IActionResult> GetAsync(TId id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IActionResult> DeleteAsync(TId id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IActionResult> GetRelationshipAsync(TId id, string relationshipName)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IActionResult> GetRelationshipsAsync(TId id, string relationshipName)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public virtual async Task<IActionResult> PatchAsync(TId id, [FromBody] TResource permission)
+        {
+            throw new System.NotImplementedException();
+        }
+
         /// <inheritdoc />
         [HttpGet]
         [HttpHead]

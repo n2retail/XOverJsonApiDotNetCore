@@ -26,6 +26,16 @@ namespace JsonApiDotNetCore.Repositories
     public interface IResourceWriteRepository<TResource, in TId>
         where TResource : class, IIdentifiable<TId>
     {
+        // TODO: FAKE IMPLEMENTATION
+        Task<TResource> CreateAsync(TResource entity);
+
+        // TODO: FAKE IMPLEMENTATION
+        Task<TResource> UpdateAsync(TId id, TResource entity);
+
+        // TODO: FAKE IMPLEMENTATION
+        Task<bool> DeleteAsync(TId id);
+
+
         /// <summary>
         /// Creates a new resource instance, in preparation for <see cref="CreateAsync" />.
         /// </summary>

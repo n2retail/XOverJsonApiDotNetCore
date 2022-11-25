@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using JsonApiDotNetCore.Serialization.Objects;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,12 @@ namespace JsonApiDotNetCore.Controllers
             ArgumentGuard.NotNull(error, nameof(error));
 
             return Error(error.AsEnumerable());
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected IActionResult Errors(object stuff)
+        {
+            throw new NotImplementedException();
         }
 
         protected IActionResult Error(IEnumerable<Error> errors)
