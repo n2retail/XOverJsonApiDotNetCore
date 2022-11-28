@@ -115,7 +115,7 @@ namespace JsonApiDotNetCore.Configuration
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public FakeContextEntity GetContextEntity(Type type)
+        public ContextEntity GetContextEntity(Type type)
         {
             throw new NotImplementedException();
         }
@@ -127,7 +127,7 @@ namespace JsonApiDotNetCore.Configuration
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public FakeContextEntity GetContextEntity(string items)
+        public ContextEntity GetContextEntity(string items)
         {
             throw new NotImplementedException();
         }

@@ -66,7 +66,7 @@ namespace JsonApiDotNetCore.Services
         IResourceGraph ResourceGraph { get; set; }
         Dictionary<AttrAttribute, object> AttributesToUpdate { get; set; }
         IEnumerable<FakeRelationship> RelationshipsToUpdate { get; set; }
-        FakeContextEntity RequestEntity { get; set; }
+        ContextEntity RequestEntity { get; set; }
         IJsonApiContext ApplyContext<T>(object controller);
         void BeginOperation();
     }
@@ -91,15 +91,15 @@ namespace JsonApiDotNetCore.Services
 
     public interface FakeResourceGraph
     {
-        FakeContextEntity GetContextEntity(Type type);
+        ContextEntity GetContextEntity(Type type);
         object GetPublicAttributeName<T>(string errPropertyName);
     }
 
-    public interface FakeContextEntity
-    {
-        List<AttrAttribute> Attributes { get; set; }
-        List<RelationshipAttribute> Relationships { get; set; }
-    }
+    // public interface FakeContextEntity
+    // {
+    //     List<AttrAttribute> Attributes { get; set; }
+    //     List<RelationshipAttribute> Relationships { get; set; }
+    // }
 
     public interface FakeRelationship
     {
@@ -214,7 +214,7 @@ namespace JsonApiDotNetCore.Builders
 {
     public interface IDocumentBuilder
     {
-        ResourceObject GetData<T>(FakeContextEntity getContextEntity, T resource) where T : Identifiable<Guid>;
+        ResourceObject GetData<T>(ContextEntity getContextEntity, T resource) where T : Identifiable<Guid>;
     }
 }
 
@@ -254,8 +254,33 @@ namespace JsonApiDotNetCore.Internal.Query
         isnotnull = 10
     }
 
-    public class SortQuery
+    public abstract class BaseQuery
     {
+        public BaseQuery(string attribute)
+        {
+            var properties = attribute.Split(QueryConstants.DOT);
+            if(properties.Length > 1)
+            {
+                Relationship = properties[0];
+                Attribute = properties[1];
+            }
+            else
+                Attribute = properties[0];
+        }
+
+        public string Attribute { get; }
+        public string Relationship { get; }
+        public bool IsAttributeOfRelationship => Relationship != null;
+    }
+
+    public class SortQuery : BaseQuery
+    {
+        public SortQuery(SortDirection direction, string attribute)
+            : base(attribute)
+        {
+            Direction = direction;
+        }
+
         public string Attribute { get; set; }
         public SortDirection Direction { get; set; }
         public string Relationship { get; set; }
