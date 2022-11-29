@@ -18,8 +18,5 @@ namespace JsonApiDotNetCore.Services
         /// Handles a JSON:API request to create a new resource with attributes, relationships or both.
         /// </summary>
         Task<TResource> CreateAsync(TResource resource, CancellationToken cancellationToken);
-
-        // TODO: FAKE IMPLEMENTATION
-        Task<TResource> CreateAsync(TResource resource);
     }
 }
