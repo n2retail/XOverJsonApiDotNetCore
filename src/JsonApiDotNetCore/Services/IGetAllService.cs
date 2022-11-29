@@ -22,9 +22,6 @@ namespace JsonApiDotNetCore.Services
         Task<IReadOnlyCollection<TResource>> GetAsync(CancellationToken cancellationToken);
 
         // TODO: FAKE IMPLEMENTATION
-        Task<IEnumerable<TResource>> GetAsync();
-
-        // TODO: FAKE IMPLEMENTATION
         IQueryable<TResource> ApplySortAndFilterQuery(IQueryable<TResource> entities);
     }
 }
