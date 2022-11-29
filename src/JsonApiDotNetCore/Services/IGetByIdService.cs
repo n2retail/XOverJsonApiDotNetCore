@@ -20,6 +20,6 @@ namespace JsonApiDotNetCore.Services
         Task<TResource> GetAsync(TId id, CancellationToken cancellationToken);
 
         // TODO: FAKE IMPLEMENTATION
-        Task<TResource> GetAsync(TId id);
+        //Task<TResource> GetAsync(TId id);
     }
 }
