@@ -49,7 +49,7 @@ namespace JsonApiDotNetCore.Errors
         // TODO: FAKE IMPLEMENTATION
         public int GetStatusCode()
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
