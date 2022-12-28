@@ -1,9 +1,9 @@
 <Project>
   <PropertyGroup>
-     <NetCoreAppVersion>net7.0</NetCoreAppVersion>
+    <NetCoreAppVersion>net7.0</NetCoreAppVersion>
     <AspNetCoreVersion>7.0.0</AspNetCoreVersion>
-     <EFCoreVersion>7.0.0</EFCoreVersion>
-    <NpgsqlPostgreSQLVersion>7.0.0</NpgsqlPostgreSQLVersion>
+    <EFCoreVersion>6.0.0</EFCoreVersion>
+    <NpgsqlPostgreSQLVersion>6.0.0</NpgsqlPostgreSQLVersion>
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)CodingGuidelines.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
