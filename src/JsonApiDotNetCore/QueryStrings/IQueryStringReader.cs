@@ -1,4 +1,6 @@
 using JsonApiDotNetCore.Controllers.Annotations;
+using JsonApiDotNetCore.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace JsonApiDotNetCore.QueryStrings
 {
@@ -14,5 +16,8 @@ namespace JsonApiDotNetCore.QueryStrings
         /// The <see cref="DisableQueryStringAttribute" /> if set on the controller that is targeted by the current request.
         /// </param>
         void ReadAll(DisableQueryStringAttribute disableQueryStringAttribute);
+
+        // TODO: FAKE IMPLEMENTATION
+        QuerySet Parse(QueryCollection queryCollection);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using JetBrains.Annotations;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
+using JsonApiDotNetCore.Services;
 
 namespace JsonApiDotNetCore.Configuration
 {
@@ -80,5 +81,14 @@ namespace JsonApiDotNetCore.Configuration
         /// Traverses the resource graph, looking for the inverse relationship of the specified <paramref name="relationship" />.
         /// </summary>
         RelationshipAttribute GetInverseRelationship(RelationshipAttribute relationship);
+
+        // TODO: FAKE IMPLEMENTATION
+        ContextEntity GetContextEntity(Type type);
+
+        // TODO: FAKE IMPLEMENTATION
+        string GetPublicAttributeName<T>(string propertyName);
+
+        // TODO: FAKE IMPLEMENTATION
+        ContextEntity GetContextEntity(string items);
     }
 }

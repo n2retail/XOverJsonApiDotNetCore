@@ -73,6 +73,8 @@ namespace JsonApiDotNetCore.Resources.Annotations
         /// </summary>
         public bool CanInclude { get; set; } = true;
 
+        public string InternalRelationshipName { get; set; }
+
         /// <summary>
         /// Gets the value of the resource property this attribute was declared on.
         /// </summary>

@@ -93,5 +93,8 @@ namespace JsonApiDotNetCore.Configuration
                 NamingStrategy = DefaultNamingStrategy
             }
         };
+
+        // TODO: FAKE IMPLEMENTATION
+        public static bool DisableErrorSource { get; set; }
     }
 }

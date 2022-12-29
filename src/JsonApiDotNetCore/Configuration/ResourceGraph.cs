@@ -6,6 +6,7 @@ using System.Reflection;
 using JetBrains.Annotations;
 using JsonApiDotNetCore.Resources;
 using JsonApiDotNetCore.Resources.Annotations;
+using JsonApiDotNetCore.Services;
 
 namespace JsonApiDotNetCore.Configuration
 {
@@ -111,6 +112,24 @@ namespace JsonApiDotNetCore.Configuration
 
             return GetResourceContext(relationship.RightType).Relationships
                 .SingleOrDefault(nextRelationship => nextRelationship.Property == relationship.InverseNavigationProperty);
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public ContextEntity GetContextEntity(Type type)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public string GetPublicAttributeName<T>(string propertyName)
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        public ContextEntity GetContextEntity(string items)
+        {
+            throw new NotImplementedException();
         }
 
         private IReadOnlyCollection<ResourceFieldAttribute> Getter<TResource>(Expression<Func<TResource, dynamic>> selector = null,

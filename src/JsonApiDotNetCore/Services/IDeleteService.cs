@@ -20,5 +20,7 @@ namespace JsonApiDotNetCore.Services
         /// Handles a JSON:API request to delete an existing resource.
         /// </summary>
         Task DeleteAsync(TId id, CancellationToken cancellationToken);
+
+        Task<bool> DeleteAsync(TId id);
     }
 }

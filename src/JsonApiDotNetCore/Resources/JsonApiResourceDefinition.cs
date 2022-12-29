@@ -37,6 +37,18 @@ namespace JsonApiDotNetCore.Resources
     {
         protected IResourceGraph ResourceGraph { get; }
 
+        // TODO: FAKE IMPLEMENTATION
+        protected virtual List<AttrAttribute> OutputAttrs()
+        {
+            throw new NotImplementedException();
+        }
+
+        // TODO: FAKE IMPLEMENTATION
+        protected List<AttrAttribute> Remove(Expression<Func<TResource, dynamic>> filter, List<AttrAttribute> from = null)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Provides metadata for the resource type <typeparamref name="TResource" />.
         /// </summary>

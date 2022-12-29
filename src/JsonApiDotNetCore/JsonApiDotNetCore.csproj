@@ -1,8 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+    <VersionPrefix>4.2.0</VersionPrefix>
+    <TargetFramework>$(NetCoreAppVersion)</TargetFramework>
+    <AssemblyName>JsonApiDotNetCore</AssemblyName>
+    <PackageId>XOverJsonApiDotNetCore</PackageId>
+  </PropertyGroup>
+
   <PropertyGroup>
+    <PackageTags>jsonapi;dotnet core;emberjs;ember</PackageTags>
+    <PackageProjectUrl>https://github.com/n2retail/JsonApiDotNetCore</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/n2retail/JsonApiDotNetCore/master/LICENSE</PackageLicenseUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/n2retail/JsonApiDotNetCore</RepositoryUrl>
+    <PublishRepositoryUrl>false</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <!-- <PropertyGroup>
     <VersionPrefix>4.2.0</VersionPrefix>
     <TargetFramework>$(NetCoreAppVersion)</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Configurations>Debug;Release;Debug-JADNC</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -14,6 +35,11 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
+  </PropertyGroup> -->
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug-JADNC' ">
+    <DebugSymbols Condition=" '$(DebugSymbols)' == '' ">true</DebugSymbols>
+    <Optimize Condition=" '$(Optimize)' == '' ">false</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
