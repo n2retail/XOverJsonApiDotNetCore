@@ -288,9 +288,11 @@ namespace JsonApiDotNetCore.Internal.Query
 
     public class FilterQuery
     {
-        public FilterQuery(string linkedUpc, string upcValue, string upcQueryOperation)
+        public FilterQuery(string attribute, string operation, string value)
         {
-            throw new NotImplementedException();
+            Attribute = attribute;
+            Operation = operation;
+            Value = value;
         }
 
         public string Attribute { get; set; }
