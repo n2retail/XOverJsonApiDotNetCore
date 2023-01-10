@@ -299,3 +299,36 @@ namespace JsonApiDotNetCore.Internal.Query
         public string Relationship { get; set; }
     }
 }
+
+namespace JsonApiDotNetCore.Services.Operations
+{
+    /// <summary>
+    /// Used to resolve <see cref="IOpProcessor"/> at runtime based on the required operation
+    /// </summary>
+    public interface IOperationProcessorResolver
+    {
+        /// <summary>
+        /// Locates the correct <see cref="CreateOpProcessor{T, TId}"/>
+        /// </summary>
+        IOpProcessor LocateCreateService(Operation operation);
+
+        /// <summary>
+        /// Locates the correct <see cref="GetOpProcessor{T, TId}"/>
+        /// </summary>
+        IOpProcessor LocateGetService(Operation operation);
+
+        /// <summary>
+        /// Locates the correct <see cref="RemoveOpProcessor{T, TId}"/>
+        /// </summary>
+        IOpProcessor LocateRemoveService(Operation operation);
+
+        /// <summary>
+        /// Locates the correct <see cref="UpdateOpProcessor{T, TId}"/>
+        /// </summary>
+        IOpProcessor LocateUpdateService(Operation operation);
+    }
+    public interface IOpProcessor
+    {
+        Task<Operation> ProcessAsync(Operation operation);
+    }
+}
