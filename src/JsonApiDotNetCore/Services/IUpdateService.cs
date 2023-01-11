@@ -19,8 +19,5 @@ namespace JsonApiDotNetCore.Services
         /// And only the values of sent relationships are replaced.
         /// </summary>
         Task<TResource> UpdateAsync(TId id, TResource resource, CancellationToken cancellationToken);
-
-        // TODO: FAKE IMPLEMENTATION
-        Task<TResource> UpdateAsync(TId id, TResource resource);
     }
 }
