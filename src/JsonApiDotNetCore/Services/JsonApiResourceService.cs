@@ -82,12 +82,6 @@ namespace JsonApiDotNetCore.Services
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<TResource> UpdateAsync(TId id, TResource resource)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
         public virtual async Task<TResource> GetAsync(TId id)
         {
             throw new NotImplementedException();
