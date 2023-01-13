@@ -94,12 +94,6 @@ namespace JsonApiDotNetCore.Services
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IEnumerable<TResource>> GetAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
         public virtual IQueryable<TResource> ApplySortAndFilterQuery(IQueryable<TResource> entities)
         {
             throw new NotImplementedException();
