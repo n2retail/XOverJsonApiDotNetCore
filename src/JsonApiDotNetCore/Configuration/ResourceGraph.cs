@@ -115,19 +115,7 @@ namespace JsonApiDotNetCore.Configuration
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public ContextEntity GetContextEntity(Type type)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
         public string GetPublicAttributeName<T>(string propertyName)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public ContextEntity GetContextEntity(string items)
         {
             throw new NotImplementedException();
         }

@@ -83,12 +83,6 @@ namespace JsonApiDotNetCore.Configuration
         RelationshipAttribute GetInverseRelationship(RelationshipAttribute relationship);
 
         // TODO: FAKE IMPLEMENTATION
-        ContextEntity GetContextEntity(Type type);
-
-        // TODO: FAKE IMPLEMENTATION
         string GetPublicAttributeName<T>(string propertyName);
-
-        // TODO: FAKE IMPLEMENTATION
-        ContextEntity GetContextEntity(string items);
     }
 }
