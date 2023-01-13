@@ -81,18 +81,6 @@ namespace JsonApiDotNetCore.Controllers
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IActionResult> GetRelationshipAsync(TId id, string relationshipName)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IActionResult> GetRelationshipsAsync(TId id, string relationshipName)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
         public virtual async Task<IActionResult> PatchAsync(TId id, [FromBody] TResource permission)
         {
             throw new System.NotImplementedException();
