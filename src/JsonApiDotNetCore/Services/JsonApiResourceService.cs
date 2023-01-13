@@ -106,12 +106,6 @@ namespace JsonApiDotNetCore.Services
         }
 
         // TODO: FAKE IMPLEMENTATION
-        public virtual Task<bool> DeleteAsync(TId id)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
         protected virtual IQueryable<TResource> IncludeRelationships(IQueryable<TResource> entities,
             List<string> relationships)
         {
