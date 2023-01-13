@@ -91,7 +91,6 @@ namespace JsonApiDotNetCore.Services
 
     public interface FakeResourceGraph
     {
-        ContextEntity GetContextEntity(Type type);
         object GetPublicAttributeName<T>(string errPropertyName);
     }
 
