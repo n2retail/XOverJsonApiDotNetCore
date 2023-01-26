@@ -56,45 +56,6 @@ namespace JsonApiDotNetCore.Controllers
         {
         }
 
-        // TODO: FAKE IMPLEMENTATION
-        protected BaseJsonApiController(
-            IJsonApiContext jsonApiContext,
-            IGetAllService<TResource, TId> getAll = null,
-            IGetByIdService<TResource, TId> getById = null,
-            IGetRelationshipService<TResource, TId> getRelationship = null,
-            // IGetRelationshipsService<T, int> getRelationships = null,
-            ICreateService<TResource, TId> create = null,
-            IUpdateService<TResource, TId> update = null,
-            // IUpdateRelationshipService<T, int> updateRelationships = null,
-            IDeleteService<TResource, TId> delete = null
-        )
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IActionResult> GetAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IActionResult> GetAsync(TId id)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public virtual Task<IActionResult> PostAsync([FromBody] TResource entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        // TODO: FAKE IMPLEMENTATION
-        public virtual async Task<IActionResult> PatchAsync(TId id, [FromBody] TResource entity) {
-            throw new NotImplementedException();
-        }
-
 
         /// <summary>
         /// Creates an instance from separate services for the various individual read and write methods.
