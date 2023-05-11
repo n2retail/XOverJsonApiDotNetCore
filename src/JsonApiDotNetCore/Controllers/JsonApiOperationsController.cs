@@ -10,6 +10,7 @@ using JsonApiDotNetCore.Serialization.Objects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
 namespace JsonApiDotNetCore.Controllers
@@ -60,6 +61,7 @@ namespace JsonApiDotNetCore.Controllers
     }
 
     // TODO: FAKE IMPLEMENTATION
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum OperationCode
     {
         get = 1,
